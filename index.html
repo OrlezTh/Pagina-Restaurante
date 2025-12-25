@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title>L'ARCADA</title>
+
+    <style>
+        /* Arreglo del Carrusel */
+        .hero img {
+            height: 70vh;
+            object-fit: cover;
+        }
+
+        /* --- ESTILOS UNIFICADOS PARA TÍTULOS Y SECCIONES --- */
+        
+        #quienes, #gallery, #contact {
+            padding: 60px 0;
+        }
+
+        /* TÍTULOS UNIFICADOS (Incluye el de Inicio) */
+        #quienes h1, 
+        #gallery h1, 
+        #contact h1,
+        #inicio h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase; /* Todo en mayúsculas */
+            color: white;
+            text-align: center;
+            width: 100%;
+            /* Aseguramos que use la fuente principal (Montserrat si está cargada en estilo.css) */
+            font-family: inherit; 
+        }
+
+        /* --- CORRECCIÓN AQUÍ --- */
+        /* Regla específica para el span itálico del título principal */
+        #inicio h1 span.italic {
+            /* Quitamos 'serif'. Heredará la misma fuente del H1 */
+            font-family: inherit; 
+            /* Forzamos el estilo itálico */
+            font-style: italic;
+
+            /* OPCIONAL: Si quieres que esta parte TAMBIÉN esté en mayúsculas, 
+               borra las dos líneas siguientes (text-transform y font-weight) */
+            text-transform: none; /* Muestra mayúsculas/minúsculas como está escrito */
+            font-weight: 400;     /* Un poco más fino para contraste */
+        }
+        /* ----------------------- */
+
+        #quienes p,
+        #contact .intro-text {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dcdcdc;
+            max-width: 900px;
+            margin: 0 auto 25px auto;
+        }
+
+        /* --- ARREGLO DE LA GALERÍA (MENÚ) --- */
+        
+        section#gallery {
+            display: block; 
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card img:hover {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+
+        .image-card h4 {
+            margin-top: 15px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-card img {
+                height: 250px;
+            }
+            #quienes h1, #gallery h1, #contact h1, #inicio h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <img src="img/L'Arcada-02.png" alt="" height="150px" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#quienes">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#gallery">Menú</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="h-screen flex items-center justify-center text-center px-4"
+        style="background-color: #ff632b3a;">
+        <div class="text-white max-w-3xl fade-in-up mt-16">
+            <p class="text-lg md:text-xl font-light tracking-widest mb-2 uppercase">Palamós, Girona</p>
+            
+            <h1 class="mb-6 leading-tight">
+                Sabor Mediterráneo <br /> 
+                <span class="italic">en el Corazón de la Costa Brava</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl mb-10 font-light text-gray-200">
+                Tradición, frescura y la mejor terraza frente al Ayuntamiento.
+            </p>
+        </div>
+    </section>
+    
+    <main class="hero py-4">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/L'Arcadaportada_Mesa de trabajo 1.png" class="d-block w-100" alt="img1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/entradaprincipal.png" class="d-block w-100" alt="img2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/mesas.png" class="d-block w-100" alt="img3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </main>
+
+    <section id="quienes" class="quienes">
+        <div class="container text-center"> 
+            <h1>Sobre Nosotros</h1>
+            
+            <p>L'Arcada se define por una cocina honesta y de mercado. Situados en el Carrer Pagès i Ortiz, somos el
+                punto de encuentro entre la tradición del tapeo y la cocina mediterránea de calidad.</p>
+                
+            <p>Nuestra barra es un escaparate de frescura, ofreciendo una amplia variedad de pinchos y tapas que
+            cambian diariamente según el producto de temporada que nos ofrece la lonja de Palamós.</p>
+            
+        </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <div class="row g-0 areas justify-content-center">
+                <div class="col-12 col-md-6 col-lg-3 text-center">
+                    <i class="fas fa-fish text-brand-gold fa-3x mb-3"></i>
+                    <h3>Producto fresco 0km</h3>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 text-center">
+                    <i class="fas fa-glass-cheers text-brand-gold fa-3x mb-3"></i>
+                    <h3>Ambiente familiar y acogedor</h3>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 text-center">
+                    <i class="fas fa-sun text-brand-gold fa-3x mb-3"></i>
+                    <h3>Terraza en calle peatonal</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1>Menú</h1>
+        
+        <div class="gallery-grid">
+            <div class="image-card">
+                <img src="img/langostinos.jpg" alt="Langostinos" onclick="openModal('img/langostinos.jpg', 'Langostinos')">
+                <h4>Langostinos</h4>
+            </div>
+            <div class="image-card">
+                <img src="img/Pasta Frutti di Mare.jpg" alt="Pasta Frutti di Mare" onclick="openModal('img/Pasta Frutti di Mare.jpg', 'Pasta Frutti di Mare')">
+                <h4>Pasta Frutti di Mare</h4>
+            </div>
+            <div class="image-card">
+                <img src="img/Yakitori..jpg" alt="Yakitori" onclick="openModal('img/Yakitori..jpg', 'Yakitori')">
+                <h4>Yakitori</h4>
+            </div>
+            <div class="image-card">
+                <img src="img/tiramisu.jpg" alt="Tiramisú" onclick="openModal('img/tiramisu.jpg', 'Tiramisú')">
+                <h4>Tiramisú</h4>
+            </div>
+            <div class="image-card">
+                <img src="img/Filete de pescado Mar y Mar..jpg" alt="Filete de pescado" onclick="openModal('img/Filete de pescado Mar y Mar..jpg', 'Filete de pescado')">
+                <h4>Filete de pescado</h4>
+            </div>
+            <div class="image-card">
+                <img src="img/Ramen de Mariscos.jpg" alt="Ramen de Mariscos" onclick="openModal('img/Ramen de Mariscos.jpg', 'Ramen de Mariscos')">
+                <h4>Ramen de Mariscos</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <h1>Contacto</h1>
+                        <p class="intro-text">Tradición, frescura y la mejor terraza frente al Ayuntamiento. Estamos en el corazón de Palamós para atenderte.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
+                    <form action="#" class="row g-3">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-12 mt-3">
+                            <input type="text" class="form-control" placeholder="Asunto">
+                        </div>
+                        <div class="form-group col-md-12 mt-3">
+                            <textarea name="" class="form-control" placeholder="Mensaje" rows="4"></textarea>
+                        </div>
+                        <div class="form-group text-center col-md-12 mt-4">
+                            <button class="btn btn-brand">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                    <ul class="list-unstyled space-y-4 text-center">
+                        <li class="d-flex align-items-start justify-content-center mb-3">
+                            <i class="fas fa-map-marker-alt mt-1 me-3 text-brand-gold fs-5"></i>
+                            <span class="text-gray-400">
+                                Carrer Pagès i Ortiz, 46<br>17230 Palamós, Girona
+                            </span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center mb-3">
+                            <i class="fas fa-phone-alt me-3 text-brand-gold fs-5"></i>
+                            <span class="text-gray-400">+34 972 31 XX XX</span>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-center">
+                            <i class="fas fa-envelope me-3 text-brand-gold fs-5"></i>
+                            <span class="text-gray-400">info@restaurantlarcada.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img id="modal-image" src="" alt="Modal Image">
+        <div id="caption" class="caption"></div>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/modal.js"></script>
+
+</body>
+</html>

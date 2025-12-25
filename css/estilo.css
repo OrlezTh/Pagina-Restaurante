@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* --- PALETA DE COLORES PROFESIONAL (ALTO CONTRASTE) --- */
+:root {
+    --bg1: #190a05; /* Negro Profundo (Fondo principal) */
+    --bg2: #FFFFFF; /* Blanco Puro */
+    --body: #B0B0B0; /* Gris claro para texto de cuerpo */
+    --color1: #000000; 
+    --color2: #383838; /* Gris Carbón Oscuro */
+    --color3: #C89446; /* ACENTO: Cobre/Oro Suave (Elegancia) */
+    --color4: #FDE047; /* Amarillo Sutil (No usado, pero disponible) */
+    --color5: #C89446; /* ACENTO: Cobre/Oro Suave (Igual que color3) */
+    --color6: #1A1A1A; /* Gris muy oscuro para elementos intermedios */
+    --color7: #606060; /* Gris medio para detalles secundarios */
+    --txt1: #202020; /* Texto oscuro (para fondos claros) */
+    --txt2: #FFFFFF; /* Blanco Puro (Texto principal sobre fondo oscuro) */
+    --txt3: #C89446; /* Acento del Acento */
+}
+
+body {
+    font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+    color: var(--body);
+    line-height: 1.8;
+    background-color: var(--bg1); /* Fondo Oscuro */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+    color: var(--txt2); /* Blanco Puro */
+}
+
+/* -- ISOLOGO --*/
+.navbar-brand {
+    font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+    color: var(--txt2) !important; /* Blanco para el logo */
+    font-weight: 600; /* Un poco más de peso */
+    font-size: 22px;
+    text-align: center;
+    margin-top: -5px;
+    text-transform: uppercase;
+}
+    
+/* -- NAV BAR --*/
+.navbar {
+    font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+    min-height: 75px;
+    background: var(--bg1); /* Fondo simple, limpio y oscuro */
+    border-bottom: 1px solid var(--color6); /* Línea divisoria sutil */
+}
+
+.navbar nav {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: var(--txt2) !important; /* Blanco Puro */
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 0px; /* Centrado */
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    font-weight: 700;
+    color: var(--color3) !important; /* ACENTO COBRE/ORO en hover */
+    /*border-bottom: 1px solid var(--brand);*/
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.0rem;
+  }
+
+#navbar i {
+    font-size: 30px;
+}
+
+
+.dropdown-item {
+    color: var(--body) !important; /* Gris claro para los ítems */
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 5px;
+    padding: 8px 15px; /* Más espacio */
+}
+
+.dropdown-item:hover {
+    color: var(--txt2) !important; /* Texto blanco en hover */
+    font-weight: 700;
+    font-size: 16px;
+    background-color: var(--color3); /* ACENTO COBRE/ORO en hover */
+}
+
+/* HERO/HOME */
+.hero {
+    background-color: var(--bg1);
+    height: 90vh;
+    background-position: top center;
+    margin-top: 0px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+#carouselExample, 
+.carousel-inner, 
+.carousel-item {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item img {
+    /* CORRECCIÓN para profesional look */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.hero h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--txt2)
+}
+
+.hero h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--txt2)
+}
+
+/* GALERIA */
+/* GALERIA */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 85%;
+    margin: 40px auto;
+    gap: 20px; /* Agregué un espacio uniforme entre tarjetas */
+}
+
+.image {
+    margin: 15px;
+    position: relative;
+    flex: 1 1 300px; /* Ajustado para que no se achiquen demasiado */
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 2px;
+    transition: box-shadow 0.3s;
+    
+    /* --- NUEVO: Para centrar el contenido (imagen y texto) --- */
+    display: flex;
+    flex-direction: column; /* Apila imagen arriba, texto abajo */
+    align-items: center;    /* Centra horizontalmente todo */
+    text-align: center;     /* Asegura que el texto del h4 esté centrado */
+}
+
+.image img {
+    width: 100%;
+    
+    /* --- NUEVO: La solución al tamaño --- */
+    height: 250px;       /* Altura fija (puedes cambiar 250px por 300px si quieres) */
+    object-fit: cover;   /* Recorta la imagen para que no se deforme */
+    
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Aseguramos que el título debajo de la imagen tenga espacio y color correcto */
+.image h4 {
+    margin-top: 15px;    /* Espacio entre foto y texto */
+    color: var(--txt2);  /* Color blanco definido en tu root */
+    font-size: 1.1rem;   /* Tamaño legible */
+    width: 100%;         /* Que ocupe todo el ancho para centrarse bien */
+}
+
+.image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(200, 148, 70, 0.4);
+}
+
+
+@media (max-width: 768px) {
+    .image {
+        flex: 1 1 calc(50% - 30px);
+    }
+}
+@media (max-width: 576px) {
+    .image {
+        flex: 1 1 100%;
+    }
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo casi negro para alto contraste */
+    padding-top: 60px;
+}
+.modal img {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--color3); /* ACENTO COBRE/ORO para el botón cerrar */
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover, .close:focus {
+    color: var(--txt2); /* Blanco en hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+.caption {
+    margin: 10px;
+    color: var(--body); /* Gris claro */
+    text-align: center;
+}
+@media (max-width: 600px) {
+    body {
+        height: 100%;
+    }
+}
+
+/* SERVICIOS */
+.servicios {
+    background-color: var(--bg1);
+    padding: 60px 0;
+}
+
+.areas {
+    background-color: var(--bg1);
+    padding: 20px;
+}
+
+.areas img {
+    height: 60px; /* Iconos un poco más grandes */
+    width: 60px;
+    margin-top: 25px;
+    filter: drop-shadow(0 0 8px var(--color3)); /* Sombra de acento en los iconos */
+}
+
+.areas h1 {
+    font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    color: var(--color3); /* ACENTO COBRE/ORO para títulos de área */
+}
+.areas p {
+    padding: 10px;
+    text-align: left;
+    color: var(--body); /* Gris claro para el cuerpo del texto */
+}
